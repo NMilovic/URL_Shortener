@@ -4,6 +4,7 @@ exports.getUrl = ("/", async (req, res) => {
     
     try{
         const navigationUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+        console.log(navigationUrl);
         const url = await TinyUrl.findOne({ tinyUrl: navigationUrl });
         console.log(url);
         if(url){
