@@ -8,7 +8,7 @@ exports.getUrl = ("/", async (req, res) => {
         const url = await TinyUrl.findOne({ tinyUrl: navigationUrl });
         console.log(url);
         if(url){
-            const clicks = url.clicks++;
+            var clicks = url.clicks++;
             console.log(clicks);
             TinyUrl.findOneAndUpdate({ _id: url._id }, { clicks: clicks }, { new: true })
                 .then(response => {
