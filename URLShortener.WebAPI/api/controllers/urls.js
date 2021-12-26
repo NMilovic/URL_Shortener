@@ -9,6 +9,7 @@ exports.getUrl = ("/", async (req, res) => {
         console.log(url);
         if(url){
             const clicks = url.clicks++;
+            console.log(clicks);
             TinyUrl.findOneAndUpdate({ _id: url._id }, { clicks: clicks }, { new: true })
                 .then(response => {
                     res.status(300).redirect(response.longUrl);
