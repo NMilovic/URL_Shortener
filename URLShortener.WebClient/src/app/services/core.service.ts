@@ -17,7 +17,7 @@ export class CoreService {
   }
 
   getAllByDate(date?: string){
-    if(!date) date = new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate();
+    if(!date) date = new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getUTCDate();
     return this._http.get(this._baseUrl + '/api/tinyUrls/ByDate/' + date).pipe(map(response => {
       return response;
     }))
