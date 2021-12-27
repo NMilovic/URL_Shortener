@@ -58,6 +58,18 @@ exports.shorten = async (req, res) => {
     }
 };
 
+exports.getByDate = (req, res) => {
+    const { date } = req.params;
+
+    TinyUrl.find({ date: date })
+        .then(response => {
+            res.status(200).json(response);
+        })
+        .catch(err => {
+            res.status(500).json(err);
+        })
+}
+
 function _recreateNewTinyUrl(tinyUrl, shortenUrl, res){
     const newTinyUrl = new TinyUrl({
         _id: new mongoose.Types.ObjectId,

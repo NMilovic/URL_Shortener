@@ -5,5 +5,6 @@ const router = express.Router();
 const TinyUrlController = require('../controllers/tinyUrls');
 
 router.post('/shorten', TinyUrlController.shorten);
+router.get('/byDate/:date', TinyUrlController.getByDate);
 
 module.exports = router;

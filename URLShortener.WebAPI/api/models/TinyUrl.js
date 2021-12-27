@@ -17,8 +17,8 @@ const tinyUrlSchema = mongoose.Schema({
         default: 0
     },
     date: {
-        type: Date,
-        default: new Date()
+        type: String,
+        default: new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate()
     }
 });
 
