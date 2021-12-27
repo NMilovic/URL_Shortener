@@ -15,6 +15,10 @@ const tinyUrlSchema = mongoose.Schema({
     clicks: {
         type: Number,
         default: 0
+    },
+    date: {
+        type: Date,
+        default: new Date()
     }
 });
 
