@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="header">
+        <button (click)="openAdminPanel()" title="Admin panel">
+            <mat-icon>account_circle</mat-icon>
+        </button>
+    </div>
+    <div class="content">
+        <div class="input-holder">
+            <span class="title">
+                CUT.ME
+            </span>
+            <input type="text" placeholder="Enter url..." [(ngModel)]="longUrlInput" />
+            <div style="text-align: center;">
+                <button (click)="shorten()">SHORTEN URL</button>
+            </div>
+        </div>
+        <div class="result" *ngIf="shortUrl" (click)="redirect()">
+            {{ shortUrl }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="header">
+        <button (click)="back()" title="Admin panel">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+    </div>
+    <div class="content">
+        <h2 style="text-align: center; padding: 16px;">TOP VISITS IN LAST 24h</h2>
+        <table *ngIf="tinyUrlArray.length">
+            <thead>
+                <tr>
+                    <th>Short URL</th>
+                    <th>Long URL</th>
+                    <th>Clicks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let url of tinyUrlArray">
+                    <td>{{url.longUrl}}</td>
+                    <td>{{url.tinyUrl}}</td>
+                    <td>{{url.clicks}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
